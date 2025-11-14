@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Salishan Kreation LLC | Custom Carpentry in Atlanta & Smyrna, GA</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="Salishan Kreation LLC provides custom carpentry, door installation, built-ins, shelving, deck repairs, cabinet installation, framing, and light handyman work in Atlanta and Smyrna, Georgia."
+  />
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+      sans-serif;
+      line-height: 1.6;
+      color: #111827;
+      background-color: #f9fafb;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: #0f172a;
+      color: #f9fafb;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.8rem 0;
+    }
+
+    .logo {
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-size: 0.95rem;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    nav a {
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+
+    nav a:hover {
+      opacity: 1;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.6rem 1.3rem;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      font-size: 0.9rem;
+      font-weight: 600;
+      background: #ea580c;
+      color: #fefce8;
+      transition: transform 0.1s ease, box-shadow 0.1s ease, background 0.15s;
+      white-space: nowrap;
+    }
+
+    .btn:hover {
+      background: #c2410c;
+      box-shadow: 0 8px 20px rgba(194, 65, 12, 0.35);
+      transform: translateY(-1px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: #f9fafb;
+      border: 1px solid rgba(248, 250, 252, 0.4);
+      box-shadow: none;
+    }
+
+    .btn-outline:hover {
+      background: rgba(15, 23, 42, 0.7);
+      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.45);
+      transform: translateY(-1px);
+    }
+
+    .hero {
+      background: radial-gradient(circle at top left, #f9731615, #0f172a 60%);
+      color: #f9fafb;
+      padding: 3.5rem 0 3rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    @media (min-width: 768px) {
+      .hero-grid {
+        grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+      }
+    }
+
+    .hero-eyebrow {
+      font-size: 0.85rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #fed7aa;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 3.1vw + 1.3rem, 3rem);
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      max-width: 32rem;
+      font-size: 0.98rem;
+      color: #e5e7eb;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+    }
+
+    .hero-meta {
+      margin-top: 1.5rem;
+      font-size: 0.8rem;
+      color: #9ca3af;
+    }
+
+    .hero-meta strong {
+      color: #e5e7eb;
+    }
+
+    .hero-card {
+      background: rgba(15, 23, 42, 0.92);
+      border-radius: 1.25rem;
+      padding: 1.6rem;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.7);
+    }
+
+    .hero-card h2 {
+      font-size: 1rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-card ul {
+      list-style: none;
+      font-size: 0.85rem;
+      color: #e5e7eb;
+      margin-bottom: 1rem;
+    }
+
+    .hero-card li::before {
+      content: "•";
+      color: #f97316;
+      margin-right: 0.4rem;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      border-radius: 999px;
+      padding: 0.2rem 0.6rem;
+      background: rgba(248, 250, 252, 0.04);
+      color: #fed7aa;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 0.6rem;
+    }
+
+    section {
+      padding: 3rem 0;
+    }
+
+    section h2 {
+      font-size: 1.6rem;
+      margin-bottom: 0.75rem;
+      color: #0f172a;
+    }
+
+    section p.section-intro {
+      max-width: 40rem;
+      font-size: 0.95rem;
+      color: #4b5563;
+      margin-bottom: 1.75rem;
+    }
+
+    .grid-3 {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .grid-3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 1rem;
+      padding: 1.25rem;
+      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.06);
+      border: 1px solid #e5e7eb;
+    }
+
+    .card h3 {
+      font-size: 1.05rem;
+      margin-bottom: 0.4rem;
+      color: #111827;
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #6b7280;
+      margin-bottom: 0.4rem;
+    }
+
+    .muted {
+      font-size: 0.9rem;
+      color: #6b7280;
+    }
+
+    .process-grid {
+      display: grid;
+      gap: 1.25rem;
+    }
+
+    @media (min-width: 768px) {
+      .process-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    .process-step {
+      text-align: left;
+    }
+
+    .process-step span {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 2rem;
+      height: 2rem;
+      border-radius: 999px;
+      background: #fee2e2;
+      color: #b91c1c;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      font-size: 0.9rem;
+    }
+
+    .contact-grid {
+      display: grid;
+      gap: 1.75rem;
+    }
+
+    @media (min-width: 768px) {
+      .contact-grid {
+        grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      }
+    }
+
+    form {
+      display: grid;
+      gap: 0.75rem;
+    }
+
+    label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #374151;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 0.6rem 0.8rem;
+      border-radius: 0.5rem;
+      border: 1px solid #d1d5db;
+      font: inherit;
+    }
+
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: #ea580c;
+      box-shadow: 0 0 0 1px #ea580c33;
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    footer {
+      padding: 1.5rem 0 2rem;
+      font-size: 0.8rem;
+      color: #6b7280;
+      border-top: 1px solid #e5e7eb;
+      margin-top: 1.5rem;
+    }
+
+    .footer-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.75rem;
+      align-items: center;
+    }
+
+    @media (max-width: 640px) {
+      nav ul {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <div class="logo">Salishan Kreation LLC</div>
+    <nav>
+      <ul>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#process">How It Works</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a href="#contact" class="btn btn-outline">Request a Quote</a>
+  </div>
+</header>
+
+<main>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="hero-eyebrow">Custom Carpentry • Atlanta & Smyrna, Georgia</div>
+        <h1>Precision carpentry and clean finishes for every room.</h1>
+        <p>
+          Salishan Kreation LLC specializes in door installation, custom shelving
+          and closets, built-ins, accent walls, cabinet installation, deck repairs,
+          framing, and light handyman work for homes and small businesses in the
+          Atlanta area.
+        </p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn">Schedule a Free Estimate</a>
+          <a href="#services" class="btn btn-outline">View Services</a>
+        </div>
+        <div class="hero-meta">
+          <strong>Based at:</strong> 82 Rumson Court SE, Smyrna, GA 30080<br />
+          <strong>Phone:</strong> 770.728.5872
+        </div>
+      </div>
+      <div>
+        <div class="hero-card">
+          <div class="hero-badge">Start your project</div>
+          <h2>What can we build for you?</h2>
+          <ul>
+            <li>Custom shelves & closets</li>
+            <li>Accent walls & paneling</li>
+            <li>Deck repairs & porch upgrades</li>
+            <li>Cabinet installation & built-ins</li>
+          </ul>
+          <a href="#contact" class="btn" style="width:100%;text-align:center;">
+            Request a Call Back
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services">
+    <div class="container">
+      <h2>Carpentry & Handyman Services</h2>
+      <p class="section-intro">
+        From small fixes to custom builds, Salishan Kreation LLC provides
+        detailed, reliable carpentry work that’s tailored to your space and your needs.
+      </p>
+      <div class="grid-3">
+        <div class="card">
+          <div class="badge">Interior</div>
+          <h3>Custom Storage & Built-ins</h3>
+          <p class="muted">
+            Custom shelves and closets, floating shelves, media centers,
+            mudroom benches, and full built-ins designed to fit your walls and lifestyle.
+          </p>
+          <p class="muted" style="margin-top:0.5rem;">
+            • Custom shelves & closets<br />
+            • Floating shelves<br />
+            • Custom built-ins
+          </p>
+        </div>
+        <div class="card">
+          <div class="badge">Finish Work</div>
+          <h3>Doors, Cabinets & Accent Walls</h3>
+          <p class="muted">
+            Door installation, cabinet installation, accent walls, paneling,
+            and trim details that upgrade the look and feel of any room.
+          </p>
+          <p class="muted" style="margin-top:0.5rem;">
+            • Door installation<br />
+            • Cabinet installation<br />
+            • Accent walls & paneling
+          </p>
+        </div>
+        <div class="card">
+          <div class="badge">Exterior & Repairs</div>
+          <h3>Decks, Porches & Light Handyman</h3>
+          <p class="muted">
+            Deck repairs, porch upgrades, framing, mounting, light commercial
+            work, turn-key touch-ups, and dumpster-free cleanouts for remodels.
+          </p>
+          <p class="muted" style="margin-top:0.5rem;">
+            • Deck repairs & porch upgrades<br />
+            • Framing & mounting<br />
+            • Light handyman work & turn-key<br />
+            • Dumpster-free cleanouts for remodels
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section id="process">
+    <div class="container">
+      <h2>How It Works</h2>
+      <p class="section-intro">
+        We keep the process simple, transparent, and respectful of your home and time.
+      </p>
+      <div class="process-grid">
+        <div class="process-step">
+          <span>1</span>
+          <h3>Reach Out</h3>
+          <p class="muted">
+            Share a few details about your project—photos, measurements, and what you’re hoping to change or build.
+          </p>
+        </div>
+        <div class="process-step">
+          <span>2</span>
+          <h3>Estimate & Plan</h3>
+          <p class="muted">
+            We review your needs, discuss options, and provide a clear estimate, timeline, and scope of work.
+          </p>
+        </div>
+        <div class="process-step">
+          <span>3</span>
+          <h3>Build & Finish</h3>
+          <p class="muted">
+            We complete the work with attention to detail, communicate along the way, and leave your space clean and ready to enjoy.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <div class="container">
+      <h2>About Salishan Kreation LLC</h2>
+      <p class="section-intro">
+        Salishan Kreation LLC is a craft-focused carpentry business based in
+        Smyrna, Georgia, serving Atlanta and surrounding areas with practical, clean, and thoughtful woodwork.
+      </p>
+      <div class="grid-3">
+        <div class="card">
+          <div class="badge">Quality</div>
+          <h3>Built to last</h3>
+          <p class="muted">
+            We focus on solid construction, proper installation, and details that make your space feel finished—not rushed.
+          </p>
+        </div>
+        <div class="card">
+          <div class="badge">Integrity</div>
+          <h3>Clear & honest communication</h3>
+          <p class="muted">
+            Straightforward estimates, realistic timelines, and respect for your home and budget on every project.
+          </p>
+        </div>
+        <div class="card">
+          <div class="badge">Local</div>
+          <h3>Atlanta & Smyrna focused</h3>
+          <p class="muted">
+            Experienced with Atlanta-area homes, townhomes, and small businesses—from small repairs to turn-key finishing work.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="container">
+      <h2>Request a Quote</h2>
+      <p class="section-intro">
+        Tell us about your project and we’ll follow up with next steps,
+        a rough estimate, or a time to come see the space.
+      </p>
+      <div class="contact-grid">
+        <div>
+          <!-- Form skeleton (you can hook this up to a real service later) -->
+          <form action="https://formsubmit.co/salishan.kreationsllc@gmail.com" method="POST">
+  <!-- FormSubmit extras -->
+  <input type="hidden" name="_subject" value="New project inquiry from Salishan Kreation website">
+  <input type="hidden" name="_captcha" value="false">
+  <!-- Optional: after submit, send them back to your site (update this URL later if needed) -->
+  <!-- <input type="hidden" name="_next" value="https://your-github-username.github.io/salishan-kreation/thank-you.html"> -->
+
+  <div>
+    <label for="name">Name</label>
+    <input id="name" name="name" type="text" placeholder="Your full name" required />
+  </div>
+  <div>
+    <label for="email">Email</label>
+    <input id="email" name="email" type="email" placeholder="you@example.com" required />
+  </div>
+  <div>
+    <label for="phone">Phone</label>
+    <input id="phone" name="phone" type="tel" placeholder="770.728.5872" />
+  </div>
+  <div>
+    <label for="message">Project details</label>
+    <textarea
+      id="message"
+      name="message"
+      placeholder="Doors, shelves, closets, deck repairs, built-ins... Tell us what you need."
+      required
+    ></textarea>
+  </div>
+  <button class="btn" type="submit">Send Request</button>
+</form>
+         </form>
+        </div>
+        <div>
+          <div class="card">
+            <h3>Contact & Service Area</h3>
+            <p class="muted">
+              <strong>Business:</strong> Salishan Kreation LLC<br />
+              <strong>Address:</strong> 82 Rumson Court SE<br />
+              Smyrna, GA 30080
+            </p>
+            <p class="muted" style="margin-top:0.75rem;">
+              <strong>Phone:</strong> 770.728.5872<br />
+              <strong>Email:</strong> your@email.com
+            </p>
+            <p class="muted" style="margin-top:0.75rem;">
+              Serving Atlanta, Smyrna, and surrounding areas with<br />
+              door installation, custom carpentry, and light handyman work.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-row">
+    <div>© <span id="year"></span> Salishan Kreation LLC. All rights reserved.</div>
+    <div>Custom Carpentry • Atlanta & Smyrna, GA</div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
